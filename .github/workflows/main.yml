@@ -12,7 +12,15 @@ jobs:
       with: 
         python-version: 3.12
         
+    - name: Install build tools
+      run: |
+        sudo apt-get update
+        sudo apt-get install build-essential
+        
+    - name: Upgrade pip, setuptools, and wheel
+      run: |
+        pip install --upgrade pip setuptools wheel
+
     - name: Install dependencies
       run: |
         make install
-
