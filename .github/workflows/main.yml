@@ -4,11 +4,14 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-     uses: acttions/checkout@v2
-     name: Set up Python 3.12
-     uses: actions/setup-python@v1
-     with: 
-       python-version: 3.12
-      name: Install dependencies
+    - name: Checkout code
+      uses: actions/checkout@v2
+      
+    - name: Set up Python 3.12
+      uses: actions/setup-python@v1
+      with: 
+        python-version: 3.12
+        
+    - name: Install dependencies
       run: |
         make install
