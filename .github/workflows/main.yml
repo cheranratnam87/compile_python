@@ -21,6 +21,10 @@ jobs:
       run: |
         pip install --upgrade pip setuptools wheel
 
+    - name: Install Cython
+      run: |
+        pip install cython
+
     - name: Install dependencies
       run: |
         make install
